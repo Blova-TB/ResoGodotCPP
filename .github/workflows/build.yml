@@ -56,8 +56,19 @@ jobs:
       - name: Download Godot Engine
         run: cmake --build build --target setup
 
-      # SInstall Godot Export Templates
+        # Cache Godot Templates
+      - name: Cache Godot Templates
+        id: cache-templates
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/godot/export_templates/
+            /c/Users/runneradmin/AppData/Roaming/Godot/export_templates/
+          key: godot-templates-${{ matrix.platform }}-4.6-stable
+
+      # Install Godot Export Templates
       - name: Install Godot Export Templates
+        if: steps.cache-templates.outputs.cache-hit != 'true'
         shell: bash
         run: |
           VERSION="4.6"
