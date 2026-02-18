@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfj02d6t245ji"]
+
+[ext_resource type="Script" uid="uid://covik0sgxrmov" path="res://scenes/gd_network_manager.gd" id="1_o5qli"]
+
+[node name="Main" type="Node" unique_id=462397334]
+
+[node name="GDNetworkManager" type="GDNetworkManager" parent="." unique_id=1274457594]
+script = ExtResource("1_o5qli")
+port = null

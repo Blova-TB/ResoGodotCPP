@@ -1,6 +1,6 @@
-#include <iostream>
+#include "godotServer.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    godotServer server("127.0.0.1:8765");
+    server.start();
 }
